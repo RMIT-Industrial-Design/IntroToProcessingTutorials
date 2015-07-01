@@ -25,7 +25,18 @@ void draw() {
 
 //-------------------------------------
 void keyPressed() {
-  float randomPosition = random(0, video.duration());
-  video.jump(randomPosition);
+  if (key == 'r') {
+    float randomPosition = random(0, video.duration());
+    video.jump(randomPosition);
+  }
+  
+  if (key == 's') video.pause();
+  else if (key == ' ') video.play();
+}
+
+//-------------------------------------
+void mouseMoved() {
+  float speed = map(mouseX, 0, width, 0.0, 2.0);
+  video.speed(speed);
 }
 
