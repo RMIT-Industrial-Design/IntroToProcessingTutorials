@@ -4,7 +4,7 @@ PShader shaderToy;
 
 //-------------------------------------
 void setup() {
-  size(800, 600, P2D);
+  size(640, 480, P2D);
   noStroke();
   background(0);
 
