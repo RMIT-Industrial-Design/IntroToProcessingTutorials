@@ -1,59 +1,61 @@
 PImage image1, image2;
 
-int index = 0;
 int alpha = 255;
-String blendType;
+int selMode = REPLACE;
+String name = "REPLACE";
 
 //-------------------------------------
 void setup() {
-  size(640, 480, P2D);
+  size(640, 480, P3D);
   image1 = loadImage("nature.jpg");
   image2 = loadImage("face.jpg");
-  
-  //applyFilters();
+  noStroke(); 
 }
 
 //-------------------------------------
 void draw() {
-  frame.setTitle("BLEND MODE = " + blendType);
+  frame.setTitle("BLEND MODE = " + name);
   alpha = int(map(mouseX, 0, width, 0, 255));
 
   tint(255,255);
   image(image1, 0, 0, width, height);
 
-  blendMode(index);
+  blendMode(selMode);
   tint(255, alpha);
   image(image2, 0, 0, width, height);
 }
 
 //-------------------------------------
-void applyFilters(){
-
-  if(index==0){ blendType = "BLEND"; }
-  else if(index==1){ blendType = "ADD"; }
-  else if(index==2){ blendType = "SUBTRACT"; }
-  else if(index==3){ blendType = "DARKEST"; }
-  else if(index==4){ blendType = "LIGHTEST"; }
-  else if(index==5){ blendType = "DIFFERENCE"; }
-  else if(index==6){ blendType = "EXCLUSION"; } 
-  else if(index==7){ blendType = "MULTIPLY"; } 
-  else if(index==8){ blendType = "SCREEN"; } 
-  else if(index==9){ blendType = "REPLACE"; } 
- 
-}
-
-//-------------------------------------
-void keyReleased(){
+void mouseReleased(){
   
-  if(keyCode == UP){ 
-    index++;
-    if(index == 10) { index = 0; }
+  if (selMode == REPLACE) { 
+    selMode = BLEND;
+    name = "BLEND";
+  } else if (selMode == BLEND) { 
+    selMode = ADD;
+    name = "ADD";
+  } else if (selMode == ADD) { 
+    selMode = SUBTRACT;
+    name = "SUBTRACT";
+  } else if (selMode == SUBTRACT) { 
+    selMode = LIGHTEST;
+    name = "LIGHTEST";
+  } else if (selMode == LIGHTEST) { 
+    selMode = DARKEST;
+    name = "DARKEST";
+  } else if (selMode == DARKEST) { 
+    selMode = EXCLUSION;  
+    name = "EXCLUSION";
+  } else if (selMode == EXCLUSION) { 
+    selMode = MULTIPLY;  
+    name = "MULTIPLY";
+  } else if (selMode == MULTIPLY) { 
+    selMode = SCREEN;
+    name = "SCREEN";
+  } else if (selMode == SCREEN) { 
+    selMode = REPLACE;
+    name = "REPLACE";
   }
-  else if(keyCode == DOWN){ 
-    index--; 
-    if(index == -1) { index = 9; }
-  }
-  applyFilters();
 
 }
 
