@@ -17,6 +17,12 @@ void draw() {
   frame.setTitle("BLEND MODE = " + name);
   alpha = int(map(mouseX, 0, width, 0, 255));
 
+  if(selMode == SUBTRACT || selMode == DARKEST || selMode == MULTIPLY)
+  background(255);
+  else {
+    background(0); 
+  }
+  
   tint(255,255);
   image(image1, 0, 0, width, height);
 
