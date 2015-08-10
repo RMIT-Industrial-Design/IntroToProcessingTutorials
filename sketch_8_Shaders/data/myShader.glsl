@@ -6,6 +6,7 @@
 uniform float iGlobalTime;
 uniform vec3 iResolution;
 uniform vec4 iMouse;
+uniform float sepeartion;
 
 #define occlusion_enabled
 #define occlusion_quality 4
@@ -172,9 +173,12 @@ void main(){
 	for (int i=0 ;i<object_count; i++) //position for each metaball
 	{
 		bpos[i] = 1.3*vec3(
-                           sin(t*0.967+float(i)*42.0),
-                           sin(t*.423+float(i)*152.0),
-                           sin(t*.76321+float(i)));
+//                           sin(t*0.967+float(i)*sepeartion),
+//                           sin(t*.423+float(i)*sepeartion),
+//                           sin(t*.76321+float(i)*sepeartion));
+        sin(t*0.967+float(i)*42.0),
+        sin(t*.423+float(i)*152.0),
+        sin(t*.76321+float(i)));
 	}
 	
 	//setup the camera
