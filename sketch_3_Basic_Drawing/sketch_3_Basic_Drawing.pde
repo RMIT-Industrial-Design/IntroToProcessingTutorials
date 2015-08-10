@@ -10,8 +10,9 @@ void setup(){
 
 //-------------------------------------
 void draw(){
-  background(255);
-  counter = counter + 0.033;
+  background(255); // Make sure we clear our background each loop through draw()
+                   // Try commenting out this line to see what happens otherwise.
+  counter = counter + 0.033; // Iterate our counter variable 
   
   //--------------------------- circles
   //let's draw a circle:
