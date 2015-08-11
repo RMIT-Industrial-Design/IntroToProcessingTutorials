@@ -1,5 +1,5 @@
 //-------------------------------------
-// Below are the different variable types availbale in Processing
+// Below are the different variable types available in Processing
 int x = 50; // Ints store whole numbers
 float y = 36.6; // Floats are used to store numbers with decimals or fractions of numbers
 boolean b = true; // Boolean values can be either 'true' or 'false'

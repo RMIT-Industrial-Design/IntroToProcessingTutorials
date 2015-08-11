@@ -42,7 +42,7 @@ void draw() {
 
 //-------------------------------------
 void keyPressed(){
-  if(key = '1'){
+  if(key == '1'){
    
   } else if(key == '2'){
     
