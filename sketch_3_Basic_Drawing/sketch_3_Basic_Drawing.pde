@@ -12,17 +12,23 @@ void draw() {
   // Try commenting out this line to see what happens otherwise.
   counter = counter + 0.033; // Iterate our counter variable 
 
+  int x = 150;
+  int y = 100;
+
   //--------------------------- circles
   //let's draw a circle:
   float radius = 50 + 10 * sin(counter);
   fill(255, 120, 0);    // draw "filled shapes"
-  ellipse(150, 100, radius, radius);
+  ellipse(x, y, radius, radius);
 
   // now just an outline
   noFill();
   stroke(255, 100, 220); // Define the colour of the outline 
   strokeWeight(1); // Set the width of the outline
-  ellipse(150, 100, 80, 80);
+  
+  int w = 80;
+  int h = 80;
+  ellipse(x, y, w, h);
   noStroke(); // Turn off outlines
 
   // Write text on our canvas
@@ -31,7 +37,11 @@ void draw() {
 
   //--------------------------- rectangles
   for (int i = 0; i < 200; i++) {
-    fill((int)random(0, 255), (int)random(0, 255), (int)random(0, 255));
+    int red = (int)random(0, 255);
+    int green = (int)random(0, 255);
+    int blue = (int)random(0, 255);
+
+    fill(red, green, blue);
     rect(random(250, 350), random(50, 150), random(10, 20), random(10, 20));
   }
   fill(0x000000);
