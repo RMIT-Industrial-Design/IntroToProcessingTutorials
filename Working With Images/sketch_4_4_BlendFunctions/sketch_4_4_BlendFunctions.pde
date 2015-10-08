@@ -62,6 +62,4 @@ void mouseReleased(){
     selMode = REPLACE;
     name = "REPLACE";
   }
-
 }
-

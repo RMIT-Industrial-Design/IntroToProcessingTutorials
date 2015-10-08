@@ -64,7 +64,7 @@ void updateShaderParams() {
   pixelateShader.set("downsample", 0.00);
   rippleShader.set("frequency", 0.00);
   rippleShader.set("waveNum", 0.00);
-  rgbShiftShader.set("offset", 0.03);
+  rgbShiftShader.set("offset", 0.00);
 }
 
 //-------------------------------------
