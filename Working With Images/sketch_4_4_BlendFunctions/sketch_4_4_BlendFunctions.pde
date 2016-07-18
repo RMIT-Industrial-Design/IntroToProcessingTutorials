@@ -14,7 +14,9 @@ void setup() {
 
 //-------------------------------------
 void draw() {
-  frame.setTitle("BLEND MODE = " + name);
+  surface.setTitle("BLEND MODE = " + name);
+  
+  
   alpha = int(map(mouseX, 0, width, 0, 255));
 
   if(selMode == SUBTRACT || selMode == DARKEST || selMode == MULTIPLY)

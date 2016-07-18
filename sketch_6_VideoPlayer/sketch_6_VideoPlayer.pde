@@ -36,7 +36,6 @@ void keyPressed() {
 
 //-------------------------------------
 void mouseMoved() {
-  float speed = map(mouseX, 0, width, 0.0, 2.0);
+  float speed = map(mouseX, 0, width, -2.0, 2.0);
   video.speed(speed);
 }
-

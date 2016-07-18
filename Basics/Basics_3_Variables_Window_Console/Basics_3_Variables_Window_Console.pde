@@ -1,7 +1,7 @@
 //-------------------------------------
 // Below are the different variable types available in Processing
-int x = 50; // Ints store whole numbers
-float y = 36.6; // Floats are used to store numbers with decimals or fractions of numbers
+int i = 50; // Ints store whole numbers
+float f = 36.6; // Floats are used to store numbers with decimals or fractions of numbers
 boolean b = true; // Boolean values can be either 'true' or 'false'
 char c = '!'; // Char can only hold a single character
 String message = "hello world"; // Strings hold a collection of characters
@@ -15,8 +15,8 @@ void setup(){
   background(0, 0, 0); // R,G,B defined between 0 - 255
   
   // Print the values stored in our varibales to the console
-  println("x = " + x);
-  println("y = " + y);
+  println("i = " + i);
+  println("f = " + f);
   println("b = " + b);
   println("c = " + c);
   println("message = " + message);
@@ -24,4 +24,5 @@ void setup(){
 
 //-------------------------------------
 void draw(){
+
 }
