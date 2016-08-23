@@ -69,4 +69,3 @@ void draw() {
   fill(0x000000);
   text("lines", 600, 200);
 }
-
