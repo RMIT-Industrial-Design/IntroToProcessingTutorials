@@ -9,7 +9,7 @@ void main(){
     uv.y *= -1.;
     uv.y += 1.0;
 
-    uv.xy = fract(uv.xy*20.0);
+    uv.xy = fract(uv.xy*2.0);
     //uv.xy *= fract(uv.xy*10.0);
     vec4 color = texture2D(tex, uv);
     

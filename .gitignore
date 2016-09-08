@@ -1,0 +1,9 @@
+*.mode*
+build/
+obj/
+*.o
+*.app/
+*.app*
+*.DS_*
+ 
+Archive/
