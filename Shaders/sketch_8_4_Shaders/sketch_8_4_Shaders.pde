@@ -16,7 +16,9 @@ void setup() {
 void draw() {
   shaderToy.set("iGlobalTime", millis() / 1000.0); // pass in a millisecond clock to enable animation 
   shaderToy.set("iMouse", float(mouseX), float(mouseY), 0.0, 0.); // Pass in our mouse coordinates to the shader
-  //shaderToy.set("sepeartion", 0.5+(sin(millis()*0.00003)*0.5)*4.0);
+  
+  //shaderToy.set("gridSize", 2.0);
+  
   shader(shaderToy); 
   rect(0, 0, width, height); // We draw a rect here for our shader to draw onto
 }

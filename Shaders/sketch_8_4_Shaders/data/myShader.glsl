@@ -7,6 +7,8 @@ uniform vec4 iMouse;
 
 out vec4 fragColor;
 
+//-------------------------------
+
 float noiseish(vec2 coord, vec2 coordMultiplier1, vec2 coordMultiplier2, vec2 coordMultiplier3, vec3 timeMultipliers) {
     return 0.333 * (sin(dot(coordMultiplier1, coord) + timeMultipliers.x * iGlobalTime) + sin(dot(coordMultiplier2, coord) + timeMultipliers.y * iGlobalTime) + sin(dot(coordMultiplier3, coord) + timeMultipliers.z * iGlobalTime));
 }
@@ -35,4 +37,3 @@ void main()
     
     fragColor = vec4(v, v, v, 1.0);
 }
-
