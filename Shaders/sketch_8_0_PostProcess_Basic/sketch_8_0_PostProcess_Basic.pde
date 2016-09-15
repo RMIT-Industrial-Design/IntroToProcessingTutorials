@@ -25,7 +25,7 @@ void captureEvent(Capture video) {
 
 //-------------------------------------
 void updateShaderParams() {
-  passThroughShader.set("copies", 7.0);
+  passThroughShader.set("copies", 12.0);
 }
 
 //-------------------------------------
