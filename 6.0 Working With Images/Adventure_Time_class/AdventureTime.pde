@@ -21,7 +21,8 @@ class AdventureTime {
     int h = img.height;
     pushMatrix();
     translate(x,y);
-    rotate(radians(((frameCount*0.9)%360)*rot_speed));
+    float lfo = map(sin(frameCount*0.005),-1.0,1.0,0.0,360.0);
+    rotate(radians((lfo*rot_speed)));
     image(img,0,0,w*size,h*size);
     popMatrix();
   }

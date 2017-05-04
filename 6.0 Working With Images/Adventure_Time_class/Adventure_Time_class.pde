@@ -3,13 +3,13 @@ ArrayList<AdventureTime> adventures = new ArrayList<AdventureTime>();
 PImage[] imgs = new PImage[3];
 int pic_index = 0;
 
-boolean bStart = false;
+boolean bStart = true;
 
 void setup() {
 //  size(1024, 768, P2D);
   fullScreen(P2D);
 
-  imgs[0] = loadImage("Images/Finn.png");
+  imgs[0] = loadImage("Images/koala1.png");
   imgs[1] = loadImage("Images/jake.png");
   imgs[2] = loadImage("Images/IceKing.png");
   for (int i = 0; i < 3; i++) {
@@ -30,9 +30,10 @@ void draw() {
     for (int i = 0; i < adventures.size(); i++) {
       AdventureTime adventure = adventures.get(i);
       float norm_length = map(i, 0, adventures.size(), 0.0, 1.0);
-      float lfo = map(norm_length*sin(frameCount*0.02), -1.0, 1.0, 0.0, 1.0);
+      float lfo = map(sin(norm_length*frameCount*0.02), -1.0, 1.0, 0.0, 1.0);
       adventure.set_size(lfo);
       adventure.set_rot_speed(lfo*5.25);
+      tint(255-norm_length,lfo*255,norm_length*255);
       adventure.draw();
     }
   }

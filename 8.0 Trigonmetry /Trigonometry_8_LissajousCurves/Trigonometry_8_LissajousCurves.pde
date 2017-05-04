@@ -20,8 +20,8 @@ void update() {
 
   PVector center = new PVector(width/2, height/2);
 
-  float lissajousSin = sin(angle * 10.0);
   float lissajousCos = cos(angle * 9.5);
+  float lissajousSin = sin(angle * 10.0);
 
   prevPos = pos;
 
