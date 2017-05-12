@@ -25,6 +25,8 @@ float[] sum = new float[bands];
 // Create a smoothing factor
 float smooth_factor = 0.2;
 
+float snare = 0.0;
+
 public void setup() {
   size(640, 360);
   background(255);
@@ -48,7 +50,7 @@ public void setup() {
 
 public void draw() {
   // Set background color, noStroke and fill color
-  background(125,255,125);
+  background(map(snare,0.0,0.02,0,255),255,125);
   fill(255,0,150);
   noStroke();
 
@@ -58,9 +60,8 @@ public void draw() {
     
     // smooth the FFT data by smoothing factor
     sum[i] += (fft.spectrum[i] - sum[i]) * smooth_factor;
-    
+    if(i == 15) snare = sum[i];
     // draw the rects with a scale factor
     rect( i*r_width, height, r_width, -sum[i]*height*scale );
   }
 }
-
