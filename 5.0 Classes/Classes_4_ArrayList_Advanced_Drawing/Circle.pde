@@ -5,7 +5,7 @@ class Circle{
   int radius;
   int max_size = 150;
   
-  // Constrctor
+  // Constructor
   Circle(int _x, int _y){
     x = _x;
     y = _y;
