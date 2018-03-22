@@ -16,7 +16,7 @@ void keyPressed() {
 
   if (key == '1') {
     // Load image from a web server
-    String url = "http://funny-pics-fun.com/wp-content/uploads/Very-Funny-Animal-Faces-8.jpg";
+    String url = "https://www.sensoryempire.com/wp-content/uploads/2017/12/tangibleTeamworkTable-1.jpg";
     img = loadImage(url, "jpg");
   } else if (key == '2') {
     // Load image stored in our data folder
