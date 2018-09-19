@@ -9,10 +9,16 @@ void setup()
 {
   size(800,800);
   gui = new ControlP5(this);
+  
   gui.addSlider("size")
      .setPosition(20,20)
-     .setRange(1.0f,100.0f)
-     .setValue(1.0f);  
+     .setRange(1.0,100.0)
+     .setWidth(300)
+     .setHeight(50)
+     .setColorActive(color(255,0,255))
+     .setColorForeground(color(255,0,0))
+     .setColorBackground(color(0,255,0))
+     .setValue(50.0);  
 }
 
 void draw()

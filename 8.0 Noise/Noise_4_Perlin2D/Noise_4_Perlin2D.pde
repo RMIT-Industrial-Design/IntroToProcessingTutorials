@@ -1,30 +1,18 @@
-Boolean bRandom = true;
+float t = 0;
 
 void setup()
 {
-  size(300,300);
+  size(600,600);   
+  noiseDetail(1,0.8); //this determines the 'look' of the noise
 }
 
 void draw() 
 {
   loadPixels();
-
-  if(bRandom) randomNoise();
-  else perlinNoise();
-
+  perlinNoise();
   updatePixels();
-}
-
-void randomNoise()
-{
-  for (int x = 0; x < width; x++) {
-    for (int y = 0; y < height; y++) {
-      //A random brightness!
-      float bright = random(255);
-      //float bright = map(noise(x,y),0,1,0,255);
-      pixels[x+y*width] = color(bright);
-    }
-  }
+  
+  t += 0.01;
 }
 
 void perlinNoise()
@@ -35,16 +23,11 @@ void perlinNoise()
     float yoff = 0.0;
  
     for (int y = 0; y < height; y++) {
-      float bright = map(noise(xoff,yoff),0,1,0,255);
-      pixels[x+y*width] = color(bright);
+      float bright = map(noise(xoff,yoff,t),0,1,0,255);
+      pixels[x+y*width] = color(bright*3); //multiply by 3 to increase brightness
       yoff += 0.01;
     }
     xoff += 0.01;
   }  
   
-}
-
-void mousePressed()
-{
-  bRandom = !bRandom; 
 }
