@@ -12,8 +12,8 @@
  */
 
 // Constants
-static int Y_AXIS = 1;
-static int X_AXIS = 2;
+int Y_AXIS = 1;
+int X_AXIS = 2;
 
 // Variables
 int spacing = 20;

@@ -1,5 +1,5 @@
 /*------------------------------------------------- 
- Basic Primative Drawing ::
+ Basic Primitive Drawing ::
  
  Example outling the following methods
  - background();
