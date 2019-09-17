@@ -8,7 +8,6 @@
 
 import processing.sound.*;
 
-AudioDevice device;
 SoundFile[] file;
 
 int red, green, blue;
@@ -19,7 +18,6 @@ void setup() {
 
   // Create an AudioDevice with low buffer size 
   // and create an array containing 5 empty soundfiles
-  device = new AudioDevice(this, 48000, 32);
   file = new SoundFile[5];
 
   // Load 5 soundfiles from a folder in a for loop. 
