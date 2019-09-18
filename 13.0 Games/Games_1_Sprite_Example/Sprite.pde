@@ -21,7 +21,7 @@ class Sprite
     img = loadImage("hat-man1.png");
     w = img.width;
     h = img.height;
-    pos = new PVector(w/2, height/2);
+    pos = new PVector(width/2-w/2, height/2-h); // put the sprite in the centre of the screen
     vel = new PVector(0, 0);
   }
 
@@ -36,15 +36,7 @@ class Sprite
       scale(-1, 1, 1);
       translate(-w, 0);
     }
-
-    beginShape();
-    //texture(img);
-    texture(images.get(frame));
-    vertex(0, 0, 0, 0);
-    vertex(w, 0, w, 0);
-    vertex(w, h, w, h);
-    vertex(0, h, 0, h);
-    endShape();
+    image(images.get(frame), 0, 0, w, h);
     popMatrix();
 
     updateFrame();
