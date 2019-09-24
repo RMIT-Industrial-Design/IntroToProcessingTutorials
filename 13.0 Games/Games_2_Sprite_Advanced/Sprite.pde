@@ -1,6 +1,7 @@
 class Sprite
 {
   ArrayList<PImage> images = new ArrayList<PImage>();
+  PImage img;
   PVector pos;
   PVector vel;
   int direction = 1;
@@ -9,6 +10,12 @@ class Sprite
   int frame = 0;
   int numFrames = 4;
   int animationSpeed = 5;
+  float timer = 0;
+  Boolean jumping = false;
+  float increment;
+  float angle = 0;
+  float jumpHeight = 20;
+  float jumpTime = 20;
 
   Sprite()
   {
@@ -17,8 +24,9 @@ class Sprite
       images.add(p);
     }
 
-    w = images.get(0).width;
-    h = images.get(0).height;
+    img = loadImage("hat-man1.png");
+    w = img.width;
+    h = img.height;
     pos = new PVector(width/2-w/2, height/2-h); // put the sprite in the centre of the screen
     vel = new PVector(0, 0);
   }
@@ -43,6 +51,8 @@ class Sprite
   void update() {
 
     pos.add(vel);
+
+    if (jumping == true) updateJump();
   }
 
   void moveLeft()
@@ -68,5 +78,23 @@ class Sprite
       frame++;
       if (frame >= numFrames) frame = 0;
     }
+  }
+
+  void jump() 
+  {
+    jumping = true;
+    increment = PI/jumpTime;
+    angle = 0;
+  }
+
+  void updateJump()
+  {
+    float val = cos(angle)*jumpHeight;
+    pos.y -= val;
+    if (angle >= PI)
+    {
+      jumping = false;
+    }
+    angle += increment;
   }
 }
